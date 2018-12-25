@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SpaceWeatherForecast.iml" filepath="$PROJECT_DIR$/SpaceWeatherForecast.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Space-Weather-Forecast-Android-Widget.iml" filepath="$PROJECT_DIR$/Space-Weather-Forecast-Android-Widget.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
