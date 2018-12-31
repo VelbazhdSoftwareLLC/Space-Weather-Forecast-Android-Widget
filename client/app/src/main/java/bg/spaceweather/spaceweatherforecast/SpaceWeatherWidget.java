@@ -25,8 +25,25 @@ import java.io.IOException;
  */
 public class SpaceWeatherWidget extends AppWidgetProvider {
 
-	/** Keep ids of the views for easier access. */
-	final static int[][] IDS = new int[][]{
+	/**
+	 * Quiet condition color.
+	 */
+	private static int quiet = Color.GREEN;
+
+	/**
+	 * Еmbarrassed condition color.
+	 */
+	private static int embarrassed = Color.YELLOW;
+
+	/**
+	 * Storm condition color.
+	 */
+	private static int storm = Color.RED;
+
+	/**
+	 * Keep ids of the views for easier access.
+	 */
+	private final static int[][] IDS = new int[][]{
 					{R.id.date_day_1, R.id.ap_day_1, R.id.state_day_1, R.id.kp_day_1},
 					{R.id.date_day_2, R.id.ap_day_2, R.id.state_day_2, R.id.kp_day_2},
 					{R.id.date_day_3, R.id.ap_day_3, R.id.state_day_3, R.id.kp_day_3},
@@ -66,14 +83,31 @@ public class SpaceWeatherWidget extends AppWidgetProvider {
 					/* Travers array with the days. */
 					for (int i = 0; i < result.length(); i++) {
 						JSONObject day = result.getJSONObject(i);
-						views.setTextViewText(IDS[i][0], day.getString("date"));
-						views.setInt(IDS[i][0], "setTextColor", Color.CYAN);
-						views.setTextViewText(IDS[i][1], "" + day.getInt("ap"));
-						views.setInt(IDS[i][1], "setTextColor", Color.GREEN);
-						views.setTextViewText(IDS[i][2], day.getString("name"));
-						views.setInt(IDS[i][2], "setTextColor", Color.RED);
-						views.setTextViewText(IDS[i][3], "" + day.getInt("kp") + " " + day.getDouble("prob"));
-						views.setInt(IDS[i][3], "setTextColor", Color.BLUE);
+
+						String date = day.getString("date");
+						int ap = day.getInt("ap");
+						String condition = day.getString("name");
+						int kp = day.getInt("kp");
+						int percent = (int) (100D * day.getDouble("prob"));
+
+						//TODO Colors should be taken from the preference dialog.
+						int color = Color.BLACK;
+						if (ap <= 18 && kp <= 3) {
+							color = quiet;
+						} else if (ap <= 39 && kp <= 5) {
+							color = embarrassed;
+						} else {
+							color = storm;
+						}
+
+						views.setTextViewText(IDS[i][0], date);
+						views.setInt(IDS[i][0], "setTextColor", Color.BLACK);
+						views.setTextViewText(IDS[i][1], "Ap = " + ap);
+						views.setInt(IDS[i][1], "setTextColor", color);
+						views.setTextViewText(IDS[i][2], condition);
+						views.setInt(IDS[i][2], "setTextColor", color);
+						views.setTextViewText(IDS[i][3], "" + kp + " (" + percent + "%)");
+						views.setInt(IDS[i][3], "setTextColor", color);
 					}
 				} catch (ClientProtocolException exception) {
 				} catch (IOException exception) {
@@ -84,7 +118,9 @@ public class SpaceWeatherWidget extends AppWidgetProvider {
 				appWidgetManager.updateAppWidget(appWidgetId, views);
 				return null;
 			}
-		}).execute();
+		}).
+
+						execute();
 	}
 
 	@Override
