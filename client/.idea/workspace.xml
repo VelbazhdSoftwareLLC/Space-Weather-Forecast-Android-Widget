@@ -28,15 +28,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SpaceWeatherWidget.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SpaceWeatherWidget.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/bg/spaceweather/spaceweatherforecast/SpaceWeatherWidget.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="94" column="27" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
+            <state relative-caret-position="703">
+              <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
               <folding>
                 <element signature="e#1973#4011#0" expanded="true" />
                 <element signature="e#4010#4011#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpaceWeatherWidgetConfigureActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/bg/spaceweather/spaceweatherforecast/SpaceWeatherWidgetConfigureActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -2427,12 +2436,19 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/bg/spaceweather/spaceweatherforecast/SpaceWeatherWidget.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="94" column="27" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
+        <state relative-caret-position="703">
+          <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
           <folding>
             <element signature="e#1973#4011#0" expanded="true" />
             <element signature="e#4010#4011#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/bg/spaceweather/spaceweatherforecast/SpaceWeatherWidgetConfigureActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
